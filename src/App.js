@@ -1,24 +1,38 @@
-import Expenses from "./Components/ExpenseFeature/Expenses";
+import componentsImage from './assets/images/components.png';
+import stateImage from './assets/images/state.png';
+import eventsImage from './assets/images/events.png';
 
-function App(){
-  const expense = [
-    {date: new Date(2023, 8, 8),
-     title: "Car Insurance",
-     amount: 300},
-    
-    {
-      date: new Date(2023, 7, 9),
-      title: "Rent",
-      amount: 400
-    }
-  ]
+import ComponentApply from './Components/Starting1/ComponentApply';
+import Headers from './Components/Starting1/Headers';
 
-  return(
+const concepts = [
+  {
+    title: 'Components',
+    image: componentsImage,
+    description:
+      'Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components can receive data via props, and they can render dynamic output using JSX.',
+  },
+  {
+    title: 'State',
+    image: stateImage,
+    description:
+      'State is data that may change over time. As it changes, the UI should be updated to reflect the updated data. Each component can maintain its own state and multiple components can share state.',
+  },
+  {
+    title: 'Events',
+    image: eventsImage,
+    description:
+      'Event handlers are added via props to (built-in) components. You pass functions as values to such event handlers to control which functions gets executed for which event.',
+  },
+];
+
+function App() {
+  return (
     <div>
-      <h2>Let's get Started</h2>
-      <Expenses expense ={expense}></Expenses>
+      <Headers></Headers>
+      <ComponentApply concepts = {concepts}></ComponentApply>  
     </div>
-  )
+  );
 }
 
 export default App;
